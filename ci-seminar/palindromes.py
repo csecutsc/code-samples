@@ -3,6 +3,7 @@ Author: Brian Chen
 Created for CSEC
 Seminar on Continuous Integration: csec.club/seminars
 01/11/2018
+Hint: Check the count_palindromes function
 '''
 
 import sys
@@ -31,6 +32,25 @@ def is_palindrome(string):
     test = string.lower()
     rev = test[::-1]
     return rev == test
+
+
+def count_palindromes(input_file):
+    '''
+    Returns the total number of palindromes that exist in input file
+    Args:
+        input_file (file): The file to check for palindromes in
+    Returns:
+        total_palindromes (int): The total number of palindromes found in
+        input_file
+    '''
+    total_palindromes = 0
+    # Opens filename and iterates through all lines to find total palindromes
+    for line in input_file:
+        line = line.rstrip()
+        # Checks if each line is a palindrome
+        if is_palindrome(line):
+            total_palindromes = 0
+    return total_palindromes
 
 
 def safe_open(filename):
@@ -68,25 +88,6 @@ def get_filename_argument():
         print "Usage: python palindrome.py [filename]"
         filename = None
     return filename
-
-
-def count_palindromes(input_file):
-    '''
-    Returns the total number of palindromes that exist in input file
-    Args:
-        input_file (file): The file to check for palindromes in
-    Returns:
-        total_palindromes (int): The total number of palindromes found in
-        input_file
-    '''
-    total_palindromes = 0
-    # Opens filename and iterates through all lines to find total palindromes
-    for line in input_file:
-        line = line.rstrip()
-        # Checks if each line is a palindrome
-        if is_palindrome(line):
-            total_palindromes += 1
-    return total_palindromes
 
 
 def find_palindromes():
