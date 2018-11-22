@@ -3,9 +3,10 @@ sudo: required
 
 language: python
 python:
-  - "2.7.10"
+  - "2.7.14"
 
 install:
+  - pip install --upgrade setuptools
   - pip install -r requirements.txt
   - pip install pytest pytest-cov
   - pip install coveralls
