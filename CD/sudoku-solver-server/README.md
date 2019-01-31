@@ -1,6 +1,6 @@
 # Continuous Deployment(CD) Seminar
 
-##Intro:
+## Intro:
 
 ## Pre-requisites:
 Note: Docker made it super easy now to get both Docker and Kubernetes in a single
@@ -49,7 +49,7 @@ Docker Machine, Virtualbox, everything else should be unchecked
 Now that we are all setup, we are now going to deploy a sudoku solver
 server[(Link)](https://hub.docker.com/r/bhowmikp/sudoku-solver-server) made by our site reliability engineer Prantar 
 
-###If you're using Minikube/microk8s:
+### If you're using Minikube/microk8s:
 Note: If you are on ubuntu instructions listed above the following
 commands should be the same except `minikube` would be replaced by
 `microk8s`
@@ -152,7 +152,7 @@ Grafana(could use Prometheus too or your custom metrics pipeline)
     ```
     and click on the `Overview` tab on the left menu
 
-###If you're using Docker-on-Windows or Docker-on-Mac:
+### If you're using Docker-on-Windows or Docker-on-Mac:
 Now remember when I told you option 1 is the easiest, well I kinda lied 
 due to time constraints. If you want to see auto horizontal pod scaling 
 and web CLI in action you need to install a few addons which normally
