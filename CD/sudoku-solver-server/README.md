@@ -221,7 +221,7 @@ releases page for your corresponding OS.
 # End Credits
 If time permits I want to showcase a video of one of my personal hero's Kelsey Hightower,
  he is the author of some great opensource projects such as [nocode](https://github.com/kelseyhightower/nocode)
- and [Kubernetes The Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way):<br/><br/>
+ and [consul-on-kubernetes](https://github.com/kelseyhightower/consul-on-kubernetes):<br/><br/>
  [Link to Video](https://youtu.be/kOa_llowQ1c?t=1020)
  
  Lastly thank you CSEC team for organizing this event, special thanks to Brian and Prantar
