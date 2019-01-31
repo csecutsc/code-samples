@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sudoku-solver-server-demo-service
+  labels:
+    app: sudoku-solver-server-demo
+spec:
+  type: NodePort
+  ports:
+    - port: 8000
+      nodePort: 30100
+      protocol: TCP
+  selector:
+    app: sudoku-solver-server-demo
+---
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: sudoku-solver-server-demo-autoscaler
+  labels:
+    app: sudoku-solver-server-demo
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: sudoku-solver-server-demo-deployment
+  minReplicas: 1
+  maxReplicas: 10
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: 10
+    - type: Resource
+      resource:
+        name: memory
+        targetAverageValue: 1000Mi
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sudoku-solver-server-demo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sudoku-solver-server-demo
+  template:
+    metadata:
+      labels:
+        app: sudoku-solver-server-demo
+    spec:
+      containers:
+        - name: sudoku-solver-server-demo-node
+          image: bhowmikp/sudoku-solver-server
+          ports:
+            - containerPort: 8000
