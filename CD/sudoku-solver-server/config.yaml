@@ -30,7 +30,7 @@ spec:
     - type: Resource
       resource:
         name: cpu
-        targetAverageUtilization: 40m
+        targetAverageUtilization: 40
     - type: Resource
       resource:
         name: memory
