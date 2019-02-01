@@ -34,7 +34,7 @@ spec:
     - type: Resource
       resource:
         name: memory
-        targetAverageValue: 1000Mi
+        targetAverageValue: 100Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
